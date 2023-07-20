@@ -33,3 +33,16 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
+    - name: PHP Composer
+  # You may pin to the exact commit or the version.
+  # uses: baschny/php-composer-action@93b5aef92179c5ebba8824db8d34748301c6a70e
+  uses: baschny/php-composer-action@v1
+    with:
+    # What version of Composer to use
+    composer_version: default
+    # Composer command to run (or get_config to just get the output vars)
+    command: install
+    # Command line arguments to composer
+    args: --optimize-autoloader --no-progress
+    # OAuth token for accessing github private resources
+    github_oauth: # optional, default is 
